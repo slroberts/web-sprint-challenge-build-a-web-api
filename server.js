@@ -12,7 +12,7 @@ server.use("/projects", projectRouter);
 server.use("/actions", actionRouter);
 
 server.get("/", (req, res) => {
-  res.send(`<h2>Hello World!</h2>`);
+  res.send(`<h2>Build a web API - Sprint Challenge</h2>`);
 });
 
 function logger(req, res, next) {
