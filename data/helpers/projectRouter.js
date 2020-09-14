@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 
 const Projects = require("./projectModel.js");
-const Actions = require("./actionModel.js");
 
 router.post("/", validateProject, (req, res) => {
   Projects.insert(req.body)
@@ -68,7 +67,7 @@ router.delete("/:id", validateProjectId, (req, res) => {
 //Custom middleware
 function validateProject(req, res, next) {
   if (!req.body) {
-    res.status(400).json({message: "missing user data"});
+    res.status(400).json({message: "missing project data"});
   } else if (!req.body.name) {
     res.status(400).json({message: "missing required name field"});
   } else if (!req.body.description) {
